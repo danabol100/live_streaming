@@ -1,12 +1,13 @@
 @use 'variables' as v;
 @use 'mixins' as m;
-@use "placeholdes";
+@use 'placeholders';
 @use 'sass:color';
 
 .header {
     width: 100%;
     height: 50px;
-    background-color: v.$color_blue;
+    // background-color: v.$color_blue;
+    background-color: color.adjust(v.$color_white, $alpha: -0.85);
 
     border: {
         bottom: {
@@ -60,7 +61,7 @@
 
             }
 
-            @media (max-width: v.$media__lg) {
+            @media (max-width: v.$media_lg) {
                 .list {
                     @include m.d-flex(center, center, nowrap, row, min(100px, 5vw), 0);
                     padding: 0 0 0 0;
